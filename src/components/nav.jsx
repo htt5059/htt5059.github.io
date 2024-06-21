@@ -1,8 +1,10 @@
+/*jshint esversion: 8 */
+
 import {
   Disclosure,
   DisclosureButton,
   DisclosurePanel,
-} from '@headlessui/react'
+} from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Component } from 'react';
 
@@ -11,31 +13,30 @@ const navigation = [
   { name: 'Resume', current: false },
   { name: 'Projects', current: false },
   { name: 'Contact', current: false },
-]
+];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
-}
+};
 
 export default class Example extends Component {
   constructor(props){
-    super(props)
+    super(props);
     this.state = {
       currentPage: props.currentPage
-    }
+    };
   }
 
   changeState = (newPage) => {
-    this.setState({currentPage: newPage})
+    this.setState({currentPage: newPage});
     navigation.forEach((page) => {
       if(page.name === newPage)
-        page.current = true
+        page.current = true;
       else 
-        page.current = false
-    }, newPage)
+        page.current = false;
+    }, newPage);
   }
   
-
   render(){
     return (
       <Disclosure as="nav" className="bg-gray-800">
@@ -98,7 +99,6 @@ export default class Example extends Component {
           </>
         )}
       </Disclosure>
-    )
+    );
   }
-  
 }
