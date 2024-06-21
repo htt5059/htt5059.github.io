@@ -1,4 +1,4 @@
-name: 'Lint Code'
+name: 'ESLint Code'
 
 on:
   push:
@@ -20,11 +20,11 @@ jobs:
       with:
         node-version: 14
 
-    - name: Install JSHint
-      run: npm install jshint --global
+    - name: Install ESLint
+      run: npm install eslint --global
 
     - name: Run Linter
       run: |
         # This command finds all JavaScript and JSX files recursively and runs JSHint on them
-        find ./src -name '*.js' -o -name '*.jsx' -exec jshint {} +
+        find ./src -name '*.js' -o -name '*.jsx' -exec eslint {} +
         echo "Linted all the .js and .jsx files successfully"
