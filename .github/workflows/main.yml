@@ -8,7 +8,7 @@ on:
 
 jobs:
   lint_js:
-    name: Lint JavaScript Files
+    name: Lint JavaScript and JSX Files
     runs-on: ubuntu-latest
 
     steps:
@@ -20,11 +20,9 @@ jobs:
       with:
         node-version: 14
 
-    - name: Install JSHint
-      run: npm install jshint --global
+    - name: Install Dependencies
+      run: npm install
 
-    - name: Run Linter
-      run: |
-        # This command finds all JavaScript and JSX files recursively and runs JSHint on them
-        find ./src -name '*.js' -o -name '*.jsx' -exec jshint {} +
-        echo "Linted all the .js and .jsx files successfully"
+    - name: Run ESLint
+      run: npx eslint --ext .js,.jsx .
+      
