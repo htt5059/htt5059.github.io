@@ -21,8 +21,8 @@ jobs:
         node-version: 14
 
     - name: Install Dependencies
-      run: npm install
-
+      run: npm init @eslint/config@latest 
+      
     - name: Run ESLint
       run: npx eslint --ext .js,.jsx .
       
