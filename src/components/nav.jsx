@@ -29,7 +29,8 @@ class Nav extends Component {
   }
 
   changeState = (newPage) => {
-    this.setState({currentPage: newPage});
+    this.state.currentPage(newPage);
+
     navigation.forEach((page) => {
       if(page["name"] === newPage)
         page["current"] = true;
@@ -40,7 +41,7 @@ class Nav extends Component {
   
   render(){
     return (
-      <Disclosure as="nav" className="bg-gray-800">
+      <Disclosure as="nav" className="bg-gray-800 rounded-t-lg">
         {({ open }) => (
           <>
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -63,7 +64,7 @@ class Nav extends Component {
                       {navigation.map((item) => (
                         <button
                           key={item.name}
-                          onClick={this.changeState.bind(item.name)}
+                          onClick={this.changeState.bind(this, item.name)}
                           className={classNames(
                             item.current ? 'bg-gray-700 text-gray-300' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                             'rounded-md px-3 py-2 text-sm font-medium',
@@ -79,13 +80,13 @@ class Nav extends Component {
               </div>
             </div>
   
-            <DisclosurePanel className="sm:hidden">
+            <DisclosurePanel className="sm:hidden relative">
               <div className="space-y-1 px-2 pb-3 pt-2">
                 {navigation.map((item) => (
                   <DisclosureButton
                     key={item.name}
                     as="a"
-                    onClick={this.changeState.bind(item.name)}
+                    onClick={this.changeState.bind(this, item.name)}
                     className={classNames(
                       item.current ? 'bg-gray-700 text-gray-300' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                       'block rounded-md px-3 py-2 text-base font-medium',
@@ -105,7 +106,7 @@ class Nav extends Component {
 }
 
 Nav.propTypes = {
-  currentPage: PropTypes.oneOf("About", "Resume", "Contact", "Projects")
+  currentPage: PropTypes.func.isRequired
 }
 
 export default Nav;

@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 import Tag from "../../components/tag";
 import Nav from "../../components/nav";
 import Avatar from '../../utils/img/AR_Self.jpg';
+import AboutMe from "../../components/template/about-me/AboutMe";
 
 function Home(){
+    const [currentPage, setCurrentPage] = useState('About');
+    const navigation = ["About", "Resume", "Projects", "Contact"]
+
+    const changePage = (currentPage) => {
+        if(navigation.includes(currentPage))
+            setCurrentPage(currentPage);
+    };
+
     return(
         <div className="md:flex items-stretch">
             <aside className="m-2 pt-5 pb-5 h-4/5 md:w-1/3 lg:w-1/4 border-solid border-2 rounded-lg" style={{borderColor: "#EFBF04"}}>
@@ -12,7 +21,7 @@ function Home(){
                         {/* Avatar and Full Name */}
                         <div className="grid justify-items-center">
                             <img className="h-32 border-solid rounded-3xl" src={Avatar} alt="Avatar"/>
-                            <span className="my-4 font-bold text-white text-xl md:text-2xl">Huy Tuan Tran</span>
+                            <span className="my-4 font-bold text-white text-4xl md:text-2xl">Huy Tuan Tran</span>
                         </div>
                         {/* Job Titles */}
                         <div className="flex flex-wrap justify-center">
@@ -49,7 +58,7 @@ function Home(){
                                 </div>
                             </a>                            
 
-                            <a className="flex rounded-full px-2 hover:drop-shadow-lg hover:ring" href="https://www.linkedin.com/in/huy-tran-htt5059/" target="_blank" rel="noreferrer noopener">
+                            <a className="flex rounded-full px-2 hover:drop-shadow-lg hover:ring" href="https://github.com/htt5059/" target="_blank" rel="noreferrer noopener">
                                 <div className="border-solid border-2 border-gray-500 rounded-md m-2 content-center">
                                     <svg className="h-8 w-8 text-white"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round">
                                         <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
@@ -64,7 +73,8 @@ function Home(){
                 </div>
             </aside>
             <div className="m-2 md:w-2/3 lg:w-3/4 md:float-right border-solid border-2 rounded-lg border-white">
-                <Nav/>
+                <Nav currentPage={changePage}/>
+                <AboutMe/>
             </div>
         </div>
     )

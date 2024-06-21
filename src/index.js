@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import Home from './pages/home/Home.jsx';
 import Error from './pages/error/Error.jsx';
-import AboutMe from './pages/about-me/AboutMe.jsx';
+import AboutMe from './components/template/about-me/AboutMe.jsx';
 
 const router = createBrowserRouter([
   {
