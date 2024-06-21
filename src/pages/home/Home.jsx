@@ -1,6 +1,7 @@
 import React from "react";
 import Tag from "../../components/tag";
 import Nav from "../../components/nav";
+import Avatar from '../../utils/img/AR_Self.jpg';
 
 function Home(){
     return(
@@ -10,7 +11,7 @@ function Home(){
                     <>
                         {/* Avatar and Full Name */}
                         <div className="grid justify-items-center">
-                            <img className="h-32 border-solid rounded-3xl" src={require('../../utils/img/AR_Self.jpg')} alt="Avatar"/>
+                            <img className="h-32 border-solid rounded-3xl" src={Avatar} alt="Avatar"/>
                             <span className="my-4 font-bold text-white text-xl md:text-2xl">Huy Tuan Tran</span>
                         </div>
                         {/* Job Titles */}

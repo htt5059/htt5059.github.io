@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types'
 
 class Tag extends Component {
     constructor(props){
@@ -13,7 +14,6 @@ class Tag extends Component {
     }
     
     render() {
-        console.log(this.state)
         return (
             <div className="w-fit m-1 border-solid rounded-full shadow-md shadow-black" 
                 style={{
@@ -29,4 +29,11 @@ class Tag extends Component {
     };
 }
 
+
+Tag.propTypes = {
+    bgColor: PropTypes.string,
+    textColor: PropTypes.string,
+    borderColor: PropTypes.string,
+    tagName: PropTypes.string
+}
 export default Tag;

@@ -6,7 +6,8 @@ import {
   DisclosurePanel,
 } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import { Component } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types'
 
 const navigation = [
   { name: 'About', current: true },
@@ -17,9 +18,9 @@ const navigation = [
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
-};
+}
 
-export default class Example extends Component {
+class Nav extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -30,10 +31,10 @@ export default class Example extends Component {
   changeState = (newPage) => {
     this.setState({currentPage: newPage});
     navigation.forEach((page) => {
-      if(page.name === newPage)
-        page.current = true;
+      if(page["name"] === newPage)
+        page["current"] = true;
       else 
-        page.current = false;
+        page["current"] = false;
     }, newPage);
   }
   
@@ -102,3 +103,9 @@ export default class Example extends Component {
     );
   }
 }
+
+Nav.propTypes = {
+  currentPage: PropTypes.oneOf("About", "Resume", "Contact", "Projects")
+}
+
+export default Nav;
