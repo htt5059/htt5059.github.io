@@ -1,12 +1,14 @@
 import React, { useCallback, useState } from "react";
-import Tag from "../../components/tag";
-import Nav from "../../components/nav";
+import Tag from "../../components/Tag";
+import Nav from "../../components/Nav";
 import Avatar from '../../utils/img/AR_Self.jpg';
 import AboutMe from "../../components/template/about-me/AboutMe";
+import Contact from "../../components/template/contact/Contact";
+import Project from "../../components/template/projects/Projects";
 
 function Home(){
     const [currentPage, setCurrentPage] = useState('About');
-    const navigation = ["About", "Resume", "Projects", "Contact"]
+    const navigation = ["About", "Projects", "Contact"]
 
     const changePage = (currentPage) => {
         if(navigation.includes(currentPage))
@@ -14,8 +16,8 @@ function Home(){
     };
 
     return(
-        <div className="md:flex items-stretch">
-            <aside className="m-2 pt-5 pb-5 h-4/5 md:w-1/3 lg:w-1/4 border-solid border-2 rounded-lg" style={{borderColor: "#EFBF04"}}>
+        <div className="md:flex md:place-items-stretch w-full mx-2 md:mx-4 lg:mx-6 absolute bottom-2 top-2 md:bottom-4 md:top-4 lg:bottom-6 lg:top-6">
+            <aside className="relative m-2 pt-5 pb-5 md:w-1/3 lg:w-1/4 border-solid border-4 rounded-lg" style={{borderColor: "#EFBF04"}}>
                 <div className="mr-2 ml-2 grid justify-center">
                     <>
                         {/* Avatar and Full Name */}
@@ -25,9 +27,9 @@ function Home(){
                         </div>
                         {/* Job Titles */}
                         <div className="flex flex-wrap justify-center">
-                            <Tag bgColor="rgb(38 38 38)" textColor="white" borderColor="#EFBF04" tagName="Software Engineer"/>
-                            <Tag bgColor="rgb(38 38 38)" textColor="white" borderColor="#EFBF04" tagName="Ignition HMI Developer"/>
-                            <Tag bgColor="rgb(38 38 38)" textColor="white" borderColor="#EFBF04" tagName="IBM Full Stack Developer"/>
+                            <Tag borderWidth={2} bgColor="rgb(38 38 38)" textColor="white" borderColor="#EFBF04" tagName="Software Engineer"/>
+                            <Tag borderWidth={2} bgColor="rgb(38 38 38)" textColor="white" borderColor="#EFBF04" tagName="Ignition HMI Developer"/>
+                            <Tag borderWidth={2} bgColor="rgb(38 38 38)" textColor="white" borderColor="#EFBF04" tagName="IBM Full Stack Developer"/>
                         </div>
                     </>
                     <hr className="h-px my-5 mx-3 bg-amber-300 border-0"/>
@@ -70,12 +72,25 @@ function Home(){
                             </a>
                         </div>
                     </>
+                    <div className="bottom-0 w-full flex justify-center mt-4 md:mt-32">
+                        <button className="border border-amber-300 bg-amber-300 hover:bg-amber-200 rounded-full p-2 font-bold ">
+                            <a>Resume</a>
+                        </button>
+                    </div>
                 </div>
             </aside>
-            <div className="m-2 md:w-2/3 lg:w-3/4 md:float-right border-solid border-2 rounded-lg border-white">
+            
+            <div className="overflow-y-auto m-2 md:w-2/3 lg:w-3/4 md:float-right border-solid border-4 rounded-lg border-white flex flex-col items-scretch">
                 <Nav currentPage={changePage}/>
-                <AboutMe/>
+                <div className="h-full flex flex-col items-scretch">
+                    {
+                        currentPage === "About" ?
+                        <AboutMe/> : currentPage === "Projects" ?
+                        <Project/> : <Contact/>
+                    }
+                </div>
             </div>
+            
         </div>
     )
 }

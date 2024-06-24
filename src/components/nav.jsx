@@ -7,11 +7,10 @@ import {
 } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import React, { Component } from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 const navigation = [
   { name: 'About', current: true },
-  { name: 'Resume', current: false },
   { name: 'Projects', current: false },
   { name: 'Contact', current: false },
 ];
@@ -41,7 +40,7 @@ class Nav extends Component {
   
   render(){
     return (
-      <Disclosure as="nav" className="bg-gray-800 rounded-t-lg">
+      <Disclosure as="nav" className="sticky top-0 bg-gray-800 rounded-t-lg">
         {({ open }) => (
           <>
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -58,22 +57,25 @@ class Nav extends Component {
                     )}
                   </DisclosureButton>
                 </div>
-                <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                <div className="flex flex-1 absolute bottom-0 items-center justify-center sm:items-stretch sm:justify-start">
                   <div className="hidden sm:ml-6 sm:block">
-                    <div className="flex space-x-4">
-                      {navigation.map((item) => (
-                        <button
-                          key={item.name}
-                          onClick={this.changeState.bind(this, item.name)}
-                          className={classNames(
-                            item.current ? 'bg-gray-700 text-gray-300' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                            'rounded-md px-3 py-2 text-sm font-medium',
-                          )}
-                          aria-current={item.current ? 'page' : undefined}
-                        >
-                          {item.name}
-                        </button>
-                      ))}
+                    <div className="h-12 flex">
+                      <div className="flex space-x-4">
+                        {navigation.map((item) => (
+                          <button
+                            key={item.name}
+                            onClick={this.changeState.bind(this, item.name)}
+                            className={classNames(
+                              item.current ? 'text-gray-300' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                              'rounded-t-md px-3 py-2 text-sm font-medium',
+                            )}
+                            style={item.current ? {backgroundColor: "rgb(30,30,30)"} : {background: ""}}
+                            aria-current={item.current ? 'page' : undefined}
+                          >
+                            {item.name}
+                          </button>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
