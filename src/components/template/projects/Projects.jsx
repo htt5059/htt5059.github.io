@@ -11,7 +11,7 @@ function Projects(){
             name: "Car Dealership",
             status: "Completed",
             url: '/project/car-dealership',
-            description: "Build a car dealership website and host on Kubernetes. Leverage IBM Cloud Code Engine and NLP to create AI-powered microservices enhancing user engagements.",
+            description: "Build a car dealership website and host on Kubernetes and Docker. Leverage IBM Cloud Code Engine and NLP to create AI-powered microservices enhancing user engagements.",
             skills: [ "React", "Django", "Docker", "Kubernetes", "IBM Cloud", "Bootstrap", "MongoDB", "SQL", "Python", "JavaScript" ]
         },
         {
@@ -72,8 +72,9 @@ function Projects(){
                 <h1 className="text-white text-2xl font-bold">Projects</h1>
                 <hr className="h-px my-2 mx-12 bg-amber-300 border-0"/>
             </>
-            
-            <SearchBar callBack={query}/>
+            <div className="sticky top-2">
+                <SearchBar callBack={query}/>
+            </div>
             
             <div className="py-5">
                 {
