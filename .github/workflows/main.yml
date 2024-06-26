@@ -20,11 +20,11 @@ jobs:
       with:
         node-version: 14
 
-    - name: Install Dependencies
-      run: npm install
-      
     - name: Change Directory
       run: cd frontend
+
+    - name: Install Dependencies
+      run: npm install
       
     - name: Run ESLint
       run: npx eslint src/
