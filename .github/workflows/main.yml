@@ -24,7 +24,8 @@ jobs:
       run: npm install
       
     - name: Change Directory
-      run: cd frontent
+      run: cd frontend
       
     - name: Run ESLint
-      run: npx eslint src/    
+      run: npx eslint src/
+      
