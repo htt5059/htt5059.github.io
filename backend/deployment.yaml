@@ -1,0 +1,29 @@
+apiVersion: nodemailer-server/v1
+kind: Deployment
+metadata:
+  labels:
+    run: nodemailer-server
+  name: nodemailer-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: nodemailer-server
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        run: nodemailer-server
+    spec:
+      containers:
+      - image: htt5059/nodemailer-server:latest
+        imagePullPolicy: Always
+        name: nodemailer-server
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+      restartPolicy: Always

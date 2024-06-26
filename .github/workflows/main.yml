@@ -23,6 +23,8 @@ jobs:
     - name: Install Dependencies
       run: npm install
       
-    - name: Run ESLint
-      run: npx eslint src/
+    - name: Change Directory
+      run: cd frontent
       
+    - name: Run ESLint
+      run: npx eslint src/    

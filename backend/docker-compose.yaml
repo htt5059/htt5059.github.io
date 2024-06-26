@@ -1,0 +1,10 @@
+version: '3.9'
+
+services:
+  api:
+    image: htt5059/nodemailer-server
+    env_file:
+      - .env
+    ports: 
+      - 8080:8080
+    
