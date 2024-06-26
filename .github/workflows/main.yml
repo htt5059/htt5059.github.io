@@ -26,6 +26,9 @@ jobs:
     - name: Show Folders
       run: ls
 
+    - name: Change Directory
+      run: cd frontend
+
     - name: Install Dependencies
       run: npm install
       
