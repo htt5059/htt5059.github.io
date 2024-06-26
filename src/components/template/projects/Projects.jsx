@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import SearchBar from "../../SearchBar";
 import CarDealerPic from "../../../utils/img/dealership-architecture.png";
 import Blog from "../../../utils/img/Blog.png";
@@ -81,7 +81,10 @@ function Projects(){
                     projectList.length == 0?
                     <>
                         <span className="font-bold text-white flex justify-center">Project Not Found</span>
-                        <p className="text-white">Are you looking for a project that's not in my portfolio? I'm always open to new ideas and collaborations.</p>
+                        <p className="text-white">
+                            Are you looking for a project that's not in my portfolio?&apos;
+                            I'm always open to new ideas and collaborations.
+                        </p>
                         <hr className="h-px my-2 mx-12 bg-amber-300 border-0"/>
                     </>
                     :

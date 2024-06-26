@@ -97,19 +97,27 @@ function AboutMe(){
                     <div className="overflow-x-auto flex flex-nowrap justify-around mx-5 lg:mx-20 my-3">
                         <div id="pda" className="mx-2 w-28">
                             <img className="h-28 bg-white" src="https://www.processanddata.com/wp-content/themes/pda-site/img/Process-and-Data-Automation.svg" alt="Process and Data Automation"/>
-                            <p className="w-28 text-white font-bold text-sm text-center">Process and Data Automation</p>
+                            <p className="w-28 text-white font-bold text-sm text-center">
+                                Process and Data Automation
+                            </p>
                         </div>
                         <div id="erie-water-works" className="mx-2 w-28">
                             <img className="h-28 bg-white" src="https://www.eriewater.org/wp-content/uploads/2022/10/logo-mobile-alt.svg" alt="Erie Water Works"/>
-                            <p className="w-28 text-white font-bold text-sm text-center">Erie Water Works</p>
+                            <p className="w-28 text-white font-bold text-sm text-center">
+                                Erie Water Works
+                            </p>
                         </div>
                         <div id="amys-kitchen" className="mx-2 w-28">
                             <img className="h-28 bg-white" src="https://www.amys.com/frontend/img/logos/amys-kitchen-green.svg?v1" alt="Amy's Kitchen"/>
-                            <p className="w-28 text-white font-bold text-sm text-center">Amy's Kitchen</p>
+                            <p className="w-28 text-white font-bold text-sm text-center">
+                                Amy's Kitchen
+                            </p>
                         </div>
                         <div id="welchs" className="mx-2 w-28">
                             <img className="h-28 bg-white" src="https://www.welchs.com/img/logo-welchs.243e73a.svg" alt="Welch's"/>
-                            <p className="w-28 text-white font-bold text-sm text-center">Welch's</p>
+                            <p className="w-28 text-white font-bold text-sm text-center">
+                                Welch's
+                            </p>
                         </div>
                     </div>
                 </div>
