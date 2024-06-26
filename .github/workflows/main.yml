@@ -20,21 +20,11 @@ jobs:
       with:
         node-version: 14
 
-    - name: Change Directory
-      run: cd frontend
-
-    - name: Show Folders
-      run: ls
-
-    - name: Change Directory
-      run: cd frontend
-
-    - name: Show Folders
-      run: ls
-
     - name: Install Dependencies
       run: npm install
+      working-directory: frontend
       
     - name: Run ESLint
       run: npx eslint src/
+      working-directory: frontend
       
