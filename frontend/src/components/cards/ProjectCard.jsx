@@ -36,31 +36,46 @@ class ProjectCard extends Component {
             name: props.name ? props.name : "Project Card",
             skills: props.skills ? props.skills : [],
             description: props.description ? props.description : "Brief description",
-            borderColor: props.borderColor ? props.borderColor : "#000000"
+            borderColor: props.borderColor ? props.borderColor : "#000000",
+            url: props.url ? props.url : ""
         }
     }
 
     render(){
         return(
-            <div className={"ring ring-offset-2 ring-["+this.state.borderColor+"] bg-white border border-solid border-2 rounded-lg grid grid-cols-1 px-2 py-5"}>
+            <div className={"h-full ring ring-offset-2 ring-["+this.state.borderColor+"] bg-white border border-solid border-2 rounded-lg grid grid-cols-1 px-2 py-5"}>
                 <div className="block h-30 w-full grid justify-items-center">
                     <img className="border-solid rounded-2xl" src={this.state.imgSrc} alt={this.state.name}/>
                     <span className="my-3 font-bold text-lg md:text-2xl">{this.state.name}</span>
                 </div>
                 <div className="flex flex-wrap justify-center">
                     {this.state.skills.map((skill) => (
-                        <Tag
-                            bgColor={colorDict[skill]} 
-                            textColor="#ffffff"
-                            borderWidth={2}
-                            borderColor="#000000"
-                            tagName={skill}
-                            shadowEffect={true}
-                        />
+                        <div key={skill}>
+                            <Tag
+                                bgColor={colorDict[skill]} 
+                                textColor="#ffffff"
+                                borderWidth={2}
+                                borderColor="#000000"
+                                tagName={skill}
+                                shadowEffect={true}
+                            />
+                        </div>
                     ))}
                 </div>
                 <span className="font-bold">Brief:<p className="font-normal">{this.state.description}</p>
                 </span>
+                <br/>
+                {this.state.url !== "" ?
+                    <div className='w-fit'>
+                        <a className='hover:underline hover:text-[#0000FF]' 
+                            href={this.state.url} 
+                            target="_blank" 
+                            rel="noreferrer noopener"
+                        >Link</a>
+                    </div>
+                    :
+                    <></>
+                }
             </div>
         )
     }
@@ -73,6 +88,7 @@ ProjectCard.propTypes = {
     skills: PropTypes.array,
     description: PropTypes.string,
     borderColor: PropTypes.string,
+    url: PropTypes.string
 }
 
 export default ProjectCard;

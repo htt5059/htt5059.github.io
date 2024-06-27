@@ -10,31 +10,35 @@ function Projects(){
             imgSrc: CarDealerPic,
             name: "Car Dealership",
             status: "Completed",
-            url: '/project/car-dealership',
+            // url: '/project/car-dealership',
             description: "Build a car dealership website and host on Kubernetes and Docker. Leverage IBM Cloud Code Engine and NLP to create AI-powered microservices enhancing user engagements.",
-            skills: [ "React", "Django", "Docker", "Kubernetes", "IBM Cloud", "Bootstrap", "MongoDB", "SQL", "Python", "JavaScript" ]
+            skills: [ "React", "Django", "Docker", "Kubernetes", "IBM Cloud", "Bootstrap", "MongoDB", "SQL", "Python", "JavaScript" ],
+            url: "https://github.com/htt5059/car_dealer"
         },
         {
             imgSrc: Blog,
             name: "Blog",
-            url: '/project/dong-a-blog',
+            // url: '/project/dong-a-blog',
             status: "Completed",
             description: "A blog website with AI-powered chatbot helps blog creators draft contents and delivers personalized blogs to users according to their preferences.",
-            skills: [ "Azure Cloud", "TailwindCSS", "SQL", "C#", "ASP.NET" ]
+            skills: [ "Azure Cloud", "TailwindCSS", "SQL", "C#", "ASP.NET" ],
+            url: "https://dongablog.azurewebsites.net/"
         },
         {
             name: "Ignition HMIs Upgrade and Perspective Migration",
-            url: '/project/ignition',
+            // url: '/project/ignition',
             status: "Completed",
             description: "Migrate Vision HMIs to Perspective utilizing Flex and Breakpoint containers to create responsive and mobile-friendly user interfaces (UIs)",
-            skills: [ "Ignition", "Python", "SQL" ]
+            skills: [ "Ignition", "Python", "SQL" ],
+            url: ""
         },
         {
             name: "Smart Food Factory",
-            url: '/project/smart-factory',
+            // url: '/project/smart-factory',
             status: "Processing",
             description: "A research of applying software engineering practices, clouds, containerization, AI/ML, and web design to Ignition Standard Edition utilizing the Web Dev module and a intermediate Node.js server.",
-            skills: [ "Ignition", "Python", "SQL", "AWS", "Node.js", "React" ]
+            skills: [ "Ignition", "Python", "SQL", "AWS", "Node.js", "React" ],
+            url: ""
         }
     ]
 
@@ -82,8 +86,8 @@ function Projects(){
                     <>
                         <span className="font-bold text-white flex justify-center">Project Not Found</span>
                         <p className="text-white">
-                            Are you looking for a project that's not in my portfolio?&apos;
-                            I'm always open to new ideas and collaborations.
+                            Are you looking for a project that&apos;s not in my portfolio?&apos;
+                            I&apos;m always open to new ideas and collaborations.
                         </p>
                         <hr className="h-px my-2 mx-12 bg-amber-300 border-0"/>
                     </>
@@ -94,22 +98,28 @@ function Projects(){
                     {
                         projectList.length == 0 ? 
                         projects.map(project => (
-                            <ProjectCard
-                                imgSrc={project.imgSrc}
-                                name={project.name}
-                                skills={[project.status].concat(project.skills)}
-                                description={project.description}
-                                borderColor={statusColorList[project.status]}
-                            />
+                            <div className="flex items-scretch" key={project.name}>
+                                <ProjectCard
+                                    imgSrc={project.imgSrc}
+                                    name={project.name}
+                                    skills={[project.status].concat(project.skills)}
+                                    description={project.description}
+                                    borderColor={statusColorList[project.status]}
+                                    url={project.url}
+                                />
+                            </div>
                         ))
                         : projectList.map(project => (
-                            <ProjectCard
-                                imgSrc={project.imgSrc}
-                                name={project.name}
-                                skills={[project.status].concat(project.skills)}
-                                description={project.description}
-                                borderColor={statusColorList[project.status]}
-                            />
+                            <div className="flex items-scretch" key={project.name}>
+                                <ProjectCard
+                                    imgSrc={project.imgSrc}
+                                    name={project.name}
+                                    skills={[project.status].concat(project.skills)}
+                                    description={project.description}
+                                    borderColor={statusColorList[project.status]}
+                                    url={project.url}
+                                />
+                            </div>
                         ))
                     }
                 </div>

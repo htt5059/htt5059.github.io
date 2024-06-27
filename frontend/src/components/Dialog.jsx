@@ -6,17 +6,15 @@ class ServiceDialog extends Component {
   constructor(props){
     super(props)
     this.state = {
-      isOpen: props.isOpen? props.isOpen : false,
+      isOpen: props.isOpen ? props.isOpen : false,
       name: props.name ? props.name : "Title",
-      description: props.description ? props.description : {key: "Undefined", value: "Undefined"},
+      description: props.description ? props.description : [{key: "Undefined", value: "Undefined"}],
       callBack: props.callBack
     }
   }
 
   close = () => {
-    this.state.isOpen = false;
-    this.state.callBack(this.state.isOpen);
-    console.log(this.state.isOpen)
+    this.state.callBack(false);
   }
 
   render(){
@@ -37,7 +35,12 @@ class ServiceDialog extends Component {
                         (item) => (
                             <li key={item.key} className="text-white">
                                 <span>
-                                    <span className="font-bold">{item.key}</span>: <span>{item.value}</span>
+                                    {item.key !== "None" ?
+                                      <>
+                                        <span className="font-bold">{item.key}</span>: <span>{item.value}</span>
+                                      </>
+                                      : <span>{item.value}</span>
+                                    }
                                 </span>
                             </li> 
                         )
@@ -48,7 +51,7 @@ class ServiceDialog extends Component {
                     className="inline-flex items-center gap-2 rounded-md bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[focus]:outline-1 data-[focus]:outline-white data-[open]:bg-gray-700"
                     onClick={this.close}
                   >
-                    Got it, thanks!
+                    Close
                   </Button>
                 </div>
               </DialogPanel>

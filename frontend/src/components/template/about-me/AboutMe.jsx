@@ -77,13 +77,15 @@ function AboutMe(){
                     {
                         services.map(
                             (service) => (
-                                <ServiceCard
-                                    id={service.id}
-                                    name={service.name}
-                                    description={service.description}
-                                    borderWidth={2}
-                                    borderColor={"#4169E1"}
-                                />
+                                <div key={service.id}>
+                                    <ServiceCard
+                                        id={service.id}
+                                        name={service.name}
+                                        description={service.description}
+                                        borderWidth={2}
+                                        borderColor={"#4169E1"}
+                                    />
+                                </div>
                             )
                         )
                     }
@@ -110,13 +112,13 @@ function AboutMe(){
                         <div id="amys-kitchen" className="mx-2 w-28">
                             <img className="h-28 bg-white" src="https://www.amys.com/frontend/img/logos/amys-kitchen-green.svg?v1" alt="Amy's Kitchen"/>
                             <p className="w-28 text-white font-bold text-sm text-center">
-                                Amy's Kitchen
+                                Amy&apos;s Kitchen
                             </p>
                         </div>
                         <div id="welchs" className="mx-2 w-28">
                             <img className="h-28 bg-white" src="https://www.welchs.com/img/logo-welchs.243e73a.svg" alt="Welch's"/>
                             <p className="w-28 text-white font-bold text-sm text-center">
-                                Welch's
+                                Welch&apos;s
                             </p>
                         </div>
                     </div>

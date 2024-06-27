@@ -72,11 +72,6 @@ function Home(){
                             </a>
                         </div>
                     </>
-                    <div className="bottom-0 w-full flex justify-center mt-4 md:mt-32">
-                        <button className="border border-amber-300 bg-amber-300 hover:bg-amber-200 rounded-full p-2 font-bold ">
-                            <a>Resume</a>
-                        </button>
-                    </div>
                 </div>
             </aside>
             
