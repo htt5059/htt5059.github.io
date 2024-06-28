@@ -29,8 +29,8 @@ app.post('/send-email', async (req, res) => {
     });
 
     const mailOptions = {
-        from: req.body.myEmail,
-        to: req.body.email,
+        from: req.body.senderEmail,
+        to: req.body.recipientEmail,
         subject: req.body.subject,
         text: req.body.message,
     };

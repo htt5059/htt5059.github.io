@@ -37,6 +37,13 @@ function Projects(){
             description: "A research of applying software engineering practices, clouds, containerization, AI/ML, and web design to Ignition Standard Edition utilizing the Web Dev module and a intermediate Node.js server.",
             skills: [ "Ignition", "Python", "SQL", "AWS", "Node.js", "React" ],
             url: ""
+        },
+        {
+            name: "Nodemailer Server",
+            url: "https://hub.docker.com/r/htt5059/nodemailer-server",
+            status: "Completed",
+            description: "A mail server sends email via SMTP of Gmail's service",
+            skills: ["Node", "Docker"]
         }
     ]
 

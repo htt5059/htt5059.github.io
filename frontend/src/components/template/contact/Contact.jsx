@@ -9,7 +9,7 @@ function Contact(){
     const [isOpen, setOpen] = useState(false);
 
     const nodemailerAPI = process.env.REACT_APP_NODEMAILER_API;
-    const myEmail = process.env.REACT_APP_MY_EMAIL;
+    const senderEmail = process.env.REACT_APP_MY_EMAIL;
 
     const changeDialogState = (newState) => {
         setOpen(newState);
@@ -17,7 +17,7 @@ function Contact(){
 
     const submitHandler = (event) => {
         event.preventDefault()
-        let body = JSON.stringify({ myEmail, email, subject, message })
+        let body = JSON.stringify({ senderEmail, recipientEmail, subject, message })
         fetch(nodemailerAPI+'/send-email', {
             method: "POST",
             headers: {"Content-Type": "application/json"},

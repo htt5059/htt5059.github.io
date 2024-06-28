@@ -8,27 +8,40 @@ class Tag extends Component {
         
         this.state = {
             bgColor: props.bgColor ? props.bgColor : "#1E1E1E",
-            textColor: props.textColor ? props.textColor : "#ffffff",
+            color: getContrastColor(props.bgColor ? props.bgColor : "#1E1E1E"),
             borderColor: props.borderColor ? props.borderColor : "#ffffff",
             borderWidth: props.borderWidth ? props.borderWidth : 1,
             tagName: props.tagName,
             shadowEffect: props.shadowEffect ? props.shadowEffect : false,
-            shadowColor: props.shadowColor ? props.shadowColor : "#ffffff"
+            shadowColor: props.shadowColor ? props.shadowColor : "#ffffff",
+            tagDesign: ""
         }
+
+        this.state.tagDesign = this.setTagDesign(this.state.shadowEffect);
     }
-    
+
+    setTagDesign(hasShadowEffect){
+        let tagDesign = ""
+        if(hasShadowEffect)
+            tagDesign = "w-fit m-1 border-solid rounded-full shadow-md shadow-black"
+        else
+            tagDesign = "w-fit m-1 border-solid rounded-full"
+
+        return tagDesign
+    }
     
 
     render() {
-        const baseTagDesign = "w-fit m-1 border-solid rounded-full"
+        // const baseTagDesign = "w-fit m-1 border-solid rounded-full"
         const contrastVal = getContrastColor(this.state.bgColor)
+        console.log(this.state.tagDesign)
         return (
-            <div className={this.state.shadowEffect ? baseTagDesign + " shadow-md shadow-["+ this.state.shadowColor + "]" : baseTagDesign}
+            <div className={this.state.tagDesign}
                 style={{
                         backgroundColor: this.state.bgColor,
-                        border: this.state.borderWidth+'px solid ' + this.state.borderColor
+                        border: this.state.borderWidth+'px solid ' + this.state.borderColor,
                     }}>
-                <span className={"text-center text-xs font-bold m-2 text-[" + contrastVal +"]"}>
+                <span className={"text-center text-xs font-bold m-2"} style={{color: this.state.color}}>
                     {this.state.tagName}
                 </span>
             </div>
