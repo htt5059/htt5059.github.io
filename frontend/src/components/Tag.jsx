@@ -7,7 +7,7 @@ class Tag extends Component {
         super(props);
         
         this.state = {
-            bgColor: props.bgColor ? props.bgColor : "#000000",
+            bgColor: props.bgColor ? props.bgColor : "#1E1E1E",
             textColor: props.textColor ? props.textColor : "#ffffff",
             borderColor: props.borderColor ? props.borderColor : "#ffffff",
             borderWidth: props.borderWidth ? props.borderWidth : 1,

@@ -26,9 +26,9 @@ function Home(){
                         </div>
                         {/* Job Titles */}
                         <div className="flex flex-wrap justify-center">
-                            <Tag borderWidth={2} bgColor="rgb(38 38 38)" textColor="white" borderColor="#EFBF04" tagName="Software Engineer"/>
-                            <Tag borderWidth={2} bgColor="rgb(38 38 38)" textColor="white" borderColor="#EFBF04" tagName="Ignition HMI Developer"/>
-                            <Tag borderWidth={2} bgColor="rgb(38 38 38)" textColor="white" borderColor="#EFBF04" tagName="IBM Full Stack Developer"/>
+                            <Tag borderWidth={2} bgColor="#262626" textColor="#ffffff" borderColor="#EFBF04" tagName="Software Engineer"/>
+                            <Tag borderWidth={2} bgColor="#262626" textColor="#ffffff" borderColor="#EFBF04" tagName="Ignition HMI Developer"/>
+                            <Tag borderWidth={2} bgColor="#262626" textColor="#ffffff" borderColor="#EFBF04" tagName="IBM Full Stack Developer"/>
                         </div>
                     </>
                     <hr className="h-px my-5 mx-3 bg-amber-300 border-0"/>
