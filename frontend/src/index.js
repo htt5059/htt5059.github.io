@@ -4,7 +4,8 @@ import reportWebVitals from './reportWebVitals';
 import "./index.css"
 import {
   createBrowserRouter,
-  RouterProvider
+  RouterProvider, 
+  HashRouter as Router
 } from 'react-router-dom';
 import Home from './pages/home/Home.jsx';
 import Error from './pages/error/Error.jsx';
@@ -23,9 +24,12 @@ const router = createBrowserRouter([
 ])
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <RouterProvider router={router}/>
-  </React.StrictMode>
+  // <React.StrictMode>
+  //   <RouterProvider router={router}/>
+  // </React.StrictMode>
+  <Router>
+    <Home/>
+  </Router>
 );
 
 // If you want to start measuring performance in your app, pass a function
