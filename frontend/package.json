@@ -2,7 +2,7 @@
   "name": "professional-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://htt5059.github.io",
+  "homepage": "http://htt5059.github.io/professional_portfolio",
   "dependencies": {
     "@headlessui/react": "^2.0.4",
     "@heroicons/react": "^2.1.4",
