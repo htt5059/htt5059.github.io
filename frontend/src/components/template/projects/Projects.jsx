@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import SearchBar from "../../SearchBar";
-import CarDealerPic from "../../../utils/img/dealership-architecture.png";
-import Blog from "../../../utils/img/Blog.png";
 import ProjectCard from '../../cards/ProjectCard';
 
 function Projects(){
     const projects = [
         {
-            imgSrc: CarDealerPic,
+            imgSrc: "https://res.cloudinary.com/dppcodyz7/image/upload/v1719558042/dealership-architecture_rho5lq.png",
             name: "Car Dealership",
             status: "Completed",
             // url: '/project/car-dealership',
@@ -16,7 +14,7 @@ function Projects(){
             url: "https://github.com/htt5059/car_dealer"
         },
         {
-            imgSrc: Blog,
+            imgSrc: "https://res.cloudinary.com/dppcodyz7/image/upload/v1719558041/Blog_weaafd.png",
             name: "Blog",
             // url: '/project/dong-a-blog',
             status: "Completed",

@@ -8,7 +8,7 @@ class ServiceCard extends Component {
         this.state = {
             id: props.id ? props.id : 0,
             name: props.name ? props.name : "Undefined",
-            description: props.description ? props.description : {key: "Undefined", value: "Undefined"},
+            description: props.description ? props.description : [{key: "Undefined", value: "Undefined"}],
             borderColor: props.borderColor ? props.borderColor : "white",
             borderWidth: props.borderWidth ? props.borderWidth : 1,
             isOpen: false

@@ -39,7 +39,8 @@ class ServiceDialog extends Component {
                                       <>
                                         <span className="font-bold">{item.key}</span>: <span>{item.value}</span>
                                       </>
-                                      : <span>{item.value}</span>
+                                      : 
+                                      <span>{item.value}</span>
                                     }
                                 </span>
                             </li> 

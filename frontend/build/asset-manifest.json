@@ -1,16 +1,12 @@
 {
   "files": {
-    "main.js": "/professional_portfolio/static/js/main.28375a97.js",
+    "main.js": "/professional_portfolio/static/js/main.942a2dbb.js",
     "static/js/453.f681b884.chunk.js": "/professional_portfolio/static/js/453.f681b884.chunk.js",
-    "static/media/dealership-architecture.png": "/professional_portfolio/static/media/dealership-architecture.4e99bc06c12fe26194d6.png",
-    "static/media/Blog.png": "/professional_portfolio/static/media/Blog.e681f03367ba5844e110.png",
-    "static/media/my_brand.jpg": "/professional_portfolio/static/media/my_brand.642198e2c34426a003a0.jpg",
-    "static/media/AR_Self.jpg": "/professional_portfolio/static/media/AR_Self.80b418f13ce91d96b6ab.jpg",
     "index.html": "/professional_portfolio/index.html",
-    "main.28375a97.js.map": "/professional_portfolio/static/js/main.28375a97.js.map",
+    "main.942a2dbb.js.map": "/professional_portfolio/static/js/main.942a2dbb.js.map",
     "453.f681b884.chunk.js.map": "/professional_portfolio/static/js/453.f681b884.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.28375a97.js"
+    "static/js/main.942a2dbb.js"
   ]
 }

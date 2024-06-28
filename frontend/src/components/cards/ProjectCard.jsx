@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import MyBrand from "../../utils/img/my_brand.jpg";
+// import MyBrand from "../../utils/img/my_brand.jpg";
 import Tag from '../Tag';
 
 const colorDict = {
@@ -32,7 +32,7 @@ class ProjectCard extends Component {
     constructor(props){
         super(props);
         this.state = {
-            imgSrc: props.imgSrc ? props.imgSrc : MyBrand,
+            imgSrc: props.imgSrc ? props.imgSrc : "https://res.cloudinary.com/dppcodyz7/image/upload/v1719558043/my_brand_jfy4or.jpg",
             name: props.name ? props.name : "Project Card",
             skills: props.skills ? props.skills : [],
             description: props.description ? props.description : "Brief description",

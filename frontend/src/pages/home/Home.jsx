@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Tag from "../../components/Tag";
 import Nav from "../../components/Nav";
-import Avatar from '../../utils/img/AR_Self.jpg';
 import AboutMe from "../../components/template/about-me/AboutMe";
 import Contact from "../../components/template/contact/Contact";
 import Project from "../../components/template/projects/Projects";
@@ -22,7 +21,7 @@ function Home(){
                     <>
                         {/* Avatar and Full Name */}
                         <div className="grid justify-items-center">
-                            <img className="h-32 border-solid rounded-3xl" src={Avatar} alt="Avatar"/>
+                            <img className="h-32 border-solid rounded-3xl" src="https://res.cloudinary.com/dppcodyz7/image/upload/v1719558040/AR_Self_p0mf5f.jpg" alt="Avatar"/>
                             <span className="my-4 font-bold text-white text-4xl md:text-2xl">Huy Tuan Tran</span>
                         </div>
                         {/* Job Titles */}
