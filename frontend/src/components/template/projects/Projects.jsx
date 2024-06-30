@@ -43,7 +43,13 @@ function Projects(){
             url: "https://hub.docker.com/r/htt5059/nodemailer-server",
             status: "Completed",
             description: "A mail server sends email via SMTP of Gmail's service",
-            skills: ["Node", "Docker"]
+            skills: ["Node", "Docker" ]
+        },
+        {
+            name: "Professional Portfolio",
+            url: "https://github.com/htt5059/professional_portfolio",
+            description: "Leverage Single Page Architecture (SPA) and microservice Nodemailer to build a portfolio. The portfolio was published on GitHub Pages, and the mircoservice was hosted on Azure.",
+            skills: [ "React", "Azure", "Docker", "JavaScript", "Node.js" ]
         }
     ]
 
