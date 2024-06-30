@@ -48,6 +48,7 @@ function Projects(){
         {
             name: "Professional Portfolio",
             url: "https://github.com/htt5059/professional_portfolio",
+            status: "Completed",
             description: "Leverage Single Page Architecture (SPA) and microservice Nodemailer to build a portfolio. The portfolio was published on GitHub Pages, and the mircoservice was hosted on Azure.",
             skills: [ "React", "Azure", "Docker", "JavaScript", "Node.js" ]
         }
